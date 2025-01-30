@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github.com/joho/godotenv"
+	"github.com/t-shah02/mochi/internal"
+)
 
 func main() {
-	fmt.Println("hello world")
+	godotenv.Load()
+
+	server := internal.NewMochiServer()
+	server.Serve()
 }
